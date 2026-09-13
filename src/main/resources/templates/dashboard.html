@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- ================= PAGE SETTINGS ================= -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>SecureBank | Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+
+<body>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            ◈
+            <span>SecureBank</span>
+        </div>
+
+
+        <!-- ================= MAIN MENU ================= -->
+        <div class="menu-label">
+            MAIN MENU
+        </div>
+
+        <div th:insert="~{fragement/main.html}"></div>
+
+        <!-- ================= SERVICES ================= -->
+
+
+        <!-- ================= SIDEBAR BOTTOM ================= -->
+        <div class="sidebar-bottom">
+
+            <!-- Settings -->
+            <a th:href="@{/account}">
+                ⚙
+                <span>Settings</span>
+            </a>
+
+
+            <!-- Logout -->
+            <a th:href="@{/login}">
+                ↪
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+    <main class="content">
+
+
+        <!-- ================= TOP BAR ================= -->
+        <header class="topbar">
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                ☰
+            </div>
+
+
+            <!-- Welcome Message -->
+            <div>
+
+                <h2>
+                    Good morning, Customer 👋
+                </h2>
+
+                <p class="muted">
+                    Here’s what’s happening with your
+                    account today.
+                </p>
+
+            </div>
+
+
+            <!-- Top Actions -->
+            <div class="top-actions">
+
+                <!-- Notification -->
+                <button>
+                    🔔
+                </button>
+
+
+                <!-- User -->
+                <div class="user">
+                    C
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             BALANCE HERO
+        ================================================== -->
+        <div class="balance-hero">
+
+            <!-- Balance Information -->
+            <div>
+
+                    <span>
+                        Available Balance
+                    </span>
+
+                <h1>
+                    ₹50,000.00
+                </h1>
+
+                <p>
+                    Account •••• 4582
+                </p>
+
+            </div>
+
+
+            <!-- Balance Actions -->
+            <div class="hero-actions">
+
+                <!-- Add Money -->
+                <a th:href="@{/deposit}">
+                    ＋ Add Money
+                </a>
+
+
+                <!-- Transfer -->
+                <a th:href="@{/transfer}">
+                    ⇄ Transfer
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+        <div class="stats">
+
+
+            <!-- Income -->
+            <div>
+
+                    <span>
+                        Income
+                    </span>
+
+                <h3>
+                    ₹45,000
+                </h3>
+
+                <small>
+                    ↑ 12.5% this month
+                </small>
+
+            </div>
+
+
+            <!-- Expenses -->
+            <div>
+
+                    <span>
+                        Expenses
+                    </span>
+
+                <h3>
+                    ₹8,700
+                </h3>
+
+                <small>
+                    ↓ 4.2% this month
+                </small>
+
+            </div>
+
+
+            <!-- Savings -->
+            <div>
+
+                    <span>
+                        Savings
+                    </span>
+
+                <h3>
+                    ₹36,300
+                </h3>
+
+                <small>
+                    ↑ 8.7% this month
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TWO COLUMN SECTION
+        ================================================== -->
+        <section class="grid2">
+
+
+            <!-- =================================================
+                 RECENT TRANSACTIONS
+            ================================================== -->
+            <div class="panel">
+
+                <!-- Panel Header -->
+                <div class="panel-head">
+
+                    <div>
+
+                        <h3>
+                            Recent Transactions
+                        </h3>
+
+                        <p class="muted">
+                            Your latest account activity
+                        </p>
+
+                    </div>
+
+
+                    <!-- View All -->
+                    <a th:href="@{/transactions}">
+                        View all →
+                    </a>
+
+                </div>
+
+
+                <!-- Transaction Table -->
+                <table>
+
+                    <!-- Table Header -->
+                    <tr>
+
+                        <th>
+                            Transaction
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Amount
+                        </th>
+
+                    </tr>
+
+
+                    <!-- Salary -->
+                    <tr>
+
+                        <td>
+                            Salary Credit
+                        </td>
+
+                        <td>
+                            30 Aug
+                        </td>
+
+                        <td>
+                            <b class="credit">
+                                Completed
+                            </b>
+                        </td>
+
+                        <td>
+                            +₹35,000
+                        </td>
+
+                    </tr>
+
+
+                    <!-- ATM Withdrawal -->
+                    <tr>
+
+                        <td>
+                            ATM Withdrawal
+                        </td>
+
+                        <td>
+                            02 Sep
+                        </td>
+
+                        <td>
+                            <b class="debit">
+                                Completed
+                            </b>
+                        </td>
+
+                        <td>
+                            −₹2,500
+                        </td>
+
+                    </tr>
+
+
+                    <!-- UPI Payment -->
+                    <tr>
+
+                        <td>
+                            UPI Payment
+                        </td>
+
+                        <td>
+                            28 Aug
+                        </td>
+
+                        <td>
+                            <b class="debit">
+                                Completed
+                            </b>
+                        </td>
+
+                        <td>
+                            −₹1,200
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+            ================================================== -->
+            <div class="panel">
+
+
+                <!-- Panel Header -->
+                <div class="panel-head">
+
+                    <div>
+
+                        <h3>
+                            Quick Actions
+                        </h3>
+
+                        <p class="muted">
+                            Common banking tasks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Action Buttons -->
+                <div class="quick">
+
+
+                    <!-- Deposit -->
+                    <a th:href="@{/deposit}">
+
+                        <i>
+                            ＋
+                        </i>
+
+                        <span>
+                                Deposit Money
+                            </span>
+
+                        <small>
+                            Add funds
+                        </small>
+
+                    </a>
+
+
+                    <!-- Withdraw -->
+                    <a th:href="@{/withdraw}">
+
+                        <i>
+                            −
+                        </i>
+
+                        <span>
+                                Withdraw Money
+                            </span>
+
+                        <small>
+                            Cash withdrawal
+                        </small>
+
+                    </a>
+
+
+                    <!-- Send Money -->
+                    <a th:href="@{/transfer}">
+
+                        <i>
+                            ⇄
+                        </i>
+
+                        <span>
+                                Send Money
+                            </span>
+
+                        <small>
+                            Transfer funds
+                        </small>
+
+                    </a>
+
+
+                    <!-- Account Details -->
+                    <a th:href="@{/account}">
+
+                        <i>
+                            ◯
+                        </i>
+
+                        <span>
+                                Account Details
+                            </span>
+
+                        <small>
+                            View profile
+                        </small>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

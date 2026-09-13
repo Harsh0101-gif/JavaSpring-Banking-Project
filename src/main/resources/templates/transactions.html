@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- ================= PAGE SETTINGS ================= -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Transactions</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+
+<body>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            ◈
+            <span>SecureBank</span>
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <div th:insert="~{fragement/main.html}"></div>
+
+
+        <!-- ================= SIDEBAR BOTTOM ================= -->
+        <div th:insert="~{fragement/SideBarBottom.html}"></div>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+    <main class="content">
+
+
+        <!-- ================= TOP BAR ================= -->
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Transactions
+                </h2>
+
+                <p class="muted">
+                    Review your complete transaction history.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             TRANSACTION PANEL
+        ================================================== -->
+        <section class="panel">
+
+
+            <!-- ================= FILTERS ================= -->
+            <div class="filters">
+
+
+                <!-- Search -->
+                <input
+                        type="text"
+                        placeholder="🔍 Search transactions"
+                >
+
+
+                <!-- Transaction Type -->
+                <select>
+
+                    <option>
+                        All Types
+                    </option>
+
+                    <option>
+                        Credit
+                    </option>
+
+                    <option>
+                        Debit
+                    </option>
+
+                </select>
+
+
+                <!-- Date Filter -->
+                <select>
+
+                    <option>
+                        All Dates
+                    </option>
+
+                    <option>
+                        This Month
+                    </option>
+
+                    <option>
+                        Last Month
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 TRANSACTION TABLE
+            ================================================== -->
+            <table>
+
+
+                <!-- ================= TABLE HEADER ================= -->
+                <tr>
+
+                    <th>
+                        Transaction ID
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+
+                    <th>
+                        Amount
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+
+                <!-- =================================================
+                     TRANSACTION 1
+                ================================================== -->
+                <tr>
+
+                    <td>
+                        TXN10001
+                    </td>
+
+                    <td>
+                        ATM Withdrawal
+                    </td>
+
+                    <td>
+                        02 Sep 2026
+                    </td>
+
+                    <td>
+                        Debit
+                    </td>
+
+                    <td>
+                        − ₹2,500
+                    </td>
+
+                    <td>
+                        <b class="credit">
+                            Completed
+                        </b>
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     TRANSACTION 2
+                ================================================== -->
+                <tr>
+
+                    <td>
+                        TXN10000
+                    </td>
+
+                    <td>
+                        Salary Credit
+                    </td>
+
+                    <td>
+                        30 Aug 2026
+                    </td>
+
+                    <td>
+                        Credit
+                    </td>
+
+                    <td>
+                        + ₹35,000
+                    </td>
+
+                    <td>
+                        <b class="credit">
+                            Completed
+                        </b>
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     TRANSACTION 3
+                ================================================== -->
+                <tr>
+
+                    <td>
+                        TXN09999
+                    </td>
+
+                    <td>
+                        UPI Payment
+                    </td>
+
+                    <td>
+                        28 Aug 2026
+                    </td>
+
+                    <td>
+                        Debit
+                    </td>
+
+                    <td>
+                        − ₹1,200
+                    </td>
+
+                    <td>
+                        <b class="credit">
+                            Completed
+                        </b>
+                    </td>
+
+                </tr>
+
+
+                <!-- =================================================
+                     TRANSACTION 4
+                ================================================== -->
+                <tr>
+
+                    <td>
+                        TXN09998
+                    </td>
+
+                    <td>
+                        Cash Deposit
+                    </td>
+
+                    <td>
+                        25 Aug 2026
+                    </td>
+
+                    <td>
+                        Credit
+                    </td>
+
+                    <td>
+                        + ₹10,000
+                    </td>
+
+                    <td>
+                        <b class="credit">
+                            Completed
+                        </b>
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

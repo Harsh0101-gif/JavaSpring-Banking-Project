@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- ================= PAGE SETTINGS ================= -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Deposit</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+
+<body>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            ◈
+            <span>SecureBank</span>
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+            <div th:insert="~{fragement/main.html}"></div>
+
+        <!-- ================= SIDEBAR BOTTOM ================= -->
+        <div th:insert="~{fragement/SideBarBottom.html}"></div>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+    <main class="content">
+
+
+        <!-- ================= TOP BAR ================= -->
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Deposit Money
+                </h2>
+
+                <p class="muted">
+                    Add funds to your SecureBank account.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DEPOSIT FORM CARD
+        ================================================== -->
+        <section class="form-card">
+
+
+            <!-- Deposit Icon -->
+            <div class="form-icon">
+                ＋
+            </div>
+
+
+            <!-- Heading -->
+            <h2>
+                Make a Deposit
+            </h2>
+
+
+            <!-- Current Balance -->
+            <p class="muted">
+                Available balance:
+                <b>₹50,000.00</b>
+            </p>
+
+
+            <!-- ================= DEPOSIT FORM ================= -->
+            <form th:action="@{/depositform}"
+                  th:object="${dita}" method="get">
+
+
+                <!-- Amount -->
+                <label>
+                    Amount
+                </label>
+
+                <div class="money">
+
+                    <!-- Currency -->
+                    <span>
+                            ₹
+                        </span>
+
+                    <!-- Amount Input -->
+                    <input
+                            type="number"
+                            name="amount"
+                            min="1"
+                            max="50000"
+                            placeholder="0.00"
+                            required
+                    >
+
+                </div>
+
+
+                <!-- Withdrawal Method -->
+                <label>
+                    Deposit Method
+                </label>
+
+                <select name="DepositMethod">
+
+                    <option value="ATM">
+                        ATM
+                    </option>
+
+                    <option value="CASH_COUNTER">
+                        Cash Counter
+                    </option>
+
+                    <option value="UPI">
+                       UPI
+                    </option>
+
+                </select>
+
+
+                <!-- Submit Button -->
+                <button
+                        type="submit"
+                        class="btn">
+
+                    Continue Withdrawal →
+
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script th:src="@{/js/app.js}"></script>
+
+</body>
+
+</html>

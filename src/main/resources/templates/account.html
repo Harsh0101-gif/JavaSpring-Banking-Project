@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Account</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">◈ <span>SecureBank</span></div>
+
+        <div th:insert="~{fragement/main.html}"></div>
+        <div th:insert="~{fragement/SideBarBottom.html}"></div>
+
+    </aside><main class="content">
+    <header class="topbar">
+        <div><h2>My Account</h2><p class="muted">Manage your personal and banking details.</p></div><div class="user">C</div></header><section class="profile-card"><div class="profile-top"><div class="profile-avatar">C</div><div><h2>Customer Name</h2><p class="muted">Premium Savings Account</p><span class="pill">● Active</span></div></div><div class="details"><div><small>Account Number</small><b>XXXX XXXX 4582</b></div><div><small>IFSC Code</small><b>SECB0001234</b></div><div><small>Branch</small><b>Main Branch</b></div><div><small>Account Type</small><b>Savings</b></div><div><small>Email</small><b>customer@example.com</b></div><div><small>Mobile</small><b>+91 XXXXX XXXXX</b></div></div></section></main></div></body></html>

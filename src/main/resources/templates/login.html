@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- Basic Settings -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>SecureBank | Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+
+<body class="auth">
+
+<!-- ================= LEFT SIDE ================= -->
+<div class="auth-left">
+
+    <!-- Brand -->
+    <div class="auth-brand">
+        ◈ SecureBank
+    </div>
+
+
+    <!-- Introduction -->
+    <div>
+
+        <h1>
+            Banking made<br>
+            <span>simple & secure.</span>
+        </h1>
+
+        <p>
+            Manage your money, transfers and
+            transactions from one place.
+        </p>
+
+    </div>
+
+
+    <!-- Copyright -->
+    <small>
+        © 2026 SecureBank
+    </small>
+
+</div>
+
+
+<!-- ================= RIGHT SIDE ================= -->
+<div class="auth-right">
+
+    <div class="auth-card">
+
+        <!-- Mobile Logo -->
+        <div class="mobile-logo">
+            ◈ SecureBank
+        </div>
+
+
+        <!-- Login Icon -->
+        <div class="iconbox">
+            🔐
+        </div>
+
+
+        <!-- Heading -->
+        <h2>
+            Welcome back
+        </h2>
+
+        <p class="muted">
+            Sign in to continue to your account
+        </p>
+
+
+        <!-- ================= LOGIN FORM ================= -->
+        <form th:action="@{/dashboard}" method="get">
+
+            <!-- Account Number -->
+            <label>
+                Account Number
+            </label>
+
+            <input
+                    type="text"
+                    name="accountNo"
+                    placeholder="Enter account number"
+                    required
+            >
+
+
+            <!-- Password -->
+            <label>
+                Password
+            </label>
+
+            <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+            >
+
+
+            <!-- Remember Me + Forgot Password -->
+            <div class="row-between">
+
+                <label class="check">
+
+                    <input type="checkbox">
+
+                    Remember me
+
+                </label>
+
+
+                <a href="#">
+                    Forgot password?
+                </a>
+
+            </div>
+
+
+            <!-- Sign In Button -->
+            <button
+                    type="submit"
+                    class="btn">
+
+                Sign In →
+
+            </button>
+
+        </form>
+
+
+        <!-- Register Link -->
+        <p class="center muted">
+
+            New customer?
+
+            <a th:href="@{/register}">
+                Create an account
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

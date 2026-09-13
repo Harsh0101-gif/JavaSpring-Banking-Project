@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Bank</title>
+</head>
+
+<body>
+
+<header>
+
+    <div th:with="currentPage=${mycurrentpage}">
+
+        <nav>
+
+            <a th:class="${currentPage == '/dashboard'} ? 'active' : ''"
+               th:href="@{/dashboard}">
+                🏠 <span>Dashboard</span>
+            </a>
+
+            <a th:class="${currentPage == '/account'} ? 'active' : ''"
+               th:href="@{/account}">
+                👤 <span>My Account</span>
+            </a>
+
+            <a th:class="${currentPage == '/transactions'} ? 'active' : ''"
+               th:href="@{/transactions}">
+                📋 <span>Transactions</span>
+            </a>
+
+            <a th:class="${currentPage == '/transfer'} ? 'active' : ''"
+               th:href="@{/transfer}">
+                ⇄ <span>Transfer</span>
+            </a>
+
+            <div class="menu-label">
+                SERVICES
+            </div>
+
+            <a th:class="${currentPage == '/deposit'} ? 'active' : ''"
+               th:href="@{/deposit}">
+                ＋ <span>Deposit</span>
+            </a>
+
+            <a th:class="${currentPage == '/withdraw'} ? 'active' : ''"
+               th:href="@{/withdraw}">
+                − <span>Withdraw</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+</body>
+</html>

@@ -1,0 +1,880 @@
+/* =====================================================
+   1. GLOBAL SETTINGS
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+a {
+    text-decoration: none;
+    color: #2456c5;
+}
+
+
+/* =====================================================
+   2. MAIN LAYOUT
+   ===================================================== */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   3. SIDEBAR
+   ===================================================== */
+
+.sidebar {
+    width: 255px;
+    background: #111d3b;
+    color: #fff;
+
+    padding: 24px 15px;
+
+    position: fixed;
+    inset: 0 auto 0 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    padding: 8px 13px 30px;
+}
+
+.logo:first-letter {
+    color: #7da2ff;
+}
+
+
+/* Menu Heading */
+
+.menu-label {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    color: #8491b2;
+
+    padding: 14px 13px 7px;
+}
+
+
+/* Sidebar Links */
+
+.sidebar nav a,
+.sidebar-bottom a {
+    display: block;
+    color: #b9c4df;
+
+    padding: 12px 13px;
+    margin: 3px 0;
+
+    border-radius: 9px;
+}
+
+
+/* Hover + Active */
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #243866;
+    color: #fff;
+}
+
+
+/* Sidebar Icons */
+
+.sidebar nav a:first-letter {
+    font-size: 18px;
+}
+
+
+/* Bottom Menu */
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+
+/* =====================================================
+   4. MAIN CONTENT
+   ===================================================== */
+
+.content {
+    margin-left: 255px;
+
+    width: calc(100% - 255px);
+
+    padding: 30px 38px;
+}
+
+
+/* =====================================================
+   5. TOP BAR
+   ===================================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.topbar h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.muted {
+    color: #74809a;
+    margin: 0;
+}
+
+
+/* Top Right Actions */
+
+.top-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.top-actions button {
+    background: white;
+    border: 1px solid #e3e7ef;
+
+    border-radius: 10px;
+    padding: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   6. USER AVATAR
+   ===================================================== */
+
+.user,
+.profile-avatar {
+    display: grid;
+    place-items: center;
+
+    background: #dce7ff;
+    color: #214fa8;
+
+    border-radius: 50%;
+    font-weight: 800;
+}
+
+.user {
+    width: 42px;
+    height: 42px;
+}
+
+
+/* =====================================================
+   7. BALANCE HERO
+   ===================================================== */
+
+.balance-hero {
+    background: linear-gradient(
+        115deg,
+        #1e3a8a,
+        #2456c5
+    );
+
+    color: #fff;
+
+    border-radius: 18px;
+
+    padding: 28px 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 12px 25px #2456c525;
+}
+
+.balance-hero span {
+    opacity: .75;
+}
+
+.balance-hero h1 {
+    font-size: 34px;
+    margin: 8px 0;
+}
+
+.balance-hero p {
+    margin: 0;
+    opacity: .75;
+}
+
+
+/* Hero Buttons */
+
+.hero-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-actions a {
+    background: #ffffff1c;
+    color: #fff;
+
+    padding: 11px 15px;
+
+    border: 1px solid #ffffff35;
+    border-radius: 9px;
+}
+
+
+/* =====================================================
+   8. DASHBOARD STATISTICS
+   ===================================================== */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin: 20px 0;
+}
+
+.stats > div,
+.panel,
+.profile-card,
+.form-card {
+    background: #fff;
+
+    border: 1px solid #e7eaf1;
+    border-radius: 15px;
+
+    padding: 21px;
+
+    box-shadow: 0 4px 16px #10182808;
+}
+
+.stats span {
+    color: #6d7890;
+}
+
+.stats h3 {
+    margin: 8px 0;
+    font-size: 24px;
+}
+
+.stats small {
+    color: #2e8a5a;
+}
+
+
+/* =====================================================
+   9. TWO COLUMN GRID
+   ===================================================== */
+
+.grid2 {
+    display: grid;
+
+    grid-template-columns: 1.55fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =====================================================
+   10. PANEL HEADER
+   ===================================================== */
+
+.panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.panel-head h3 {
+    margin: 0 0 4px;
+}
+
+.panel-head a {
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   11. TABLE
+   ===================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+
+    padding: 14px 8px;
+
+    border-bottom: 1px solid #edf0f4;
+
+    font-size: 13px;
+}
+
+th {
+    color: #78839a;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+/* Transaction Colors */
+
+.credit {
+    color: #16834b;
+}
+
+.debit {
+    color: #c43d3d;
+}
+
+
+/* =====================================================
+   12. QUICK ACTIONS
+   ===================================================== */
+
+.quick {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.quick a {
+    border: 1px solid #e9edf4;
+
+    padding: 15px;
+
+    border-radius: 11px;
+
+    color: #172033;
+}
+
+
+/* Quick Action Icon */
+
+.quick i {
+    display: block;
+
+    font-style: normal;
+
+    background: #edf3ff;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    padding-top: 7px;
+
+    color: #2456c5;
+}
+
+.quick span,
+.quick small {
+    display: block;
+    margin-top: 9px;
+}
+
+.quick small {
+    color: #8992a5;
+}
+
+
+/* =====================================================
+   13. PROFILE CARD
+   ===================================================== */
+
+.profile-card {
+    max-width: 850px;
+}
+
+.profile-top {
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+
+    padding-bottom: 24px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+
+/* Profile Avatar */
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+
+    font-size: 25px;
+}
+
+
+/* Account Status */
+
+.pill {
+    display: inline-block;
+
+    background: #e9f8ef;
+    color: #16834b;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    margin-top: 8px;
+}
+
+
+/* Account Details */
+
+.details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    padding-top: 25px;
+}
+
+.details small {
+    display: block;
+
+    color: #7b8598;
+
+    margin-bottom: 7px;
+}
+
+
+/* =====================================================
+   14. FORM CARD
+   ===================================================== */
+
+.form-card {
+    max-width: 620px;
+}
+
+
+/* Form Icon */
+
+.form-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    background: #e9f8ef;
+    color: #16834b;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Red Icon */
+
+.form-icon.red {
+    background: #fff0f0;
+    color: #c43d3d;
+}
+
+
+/* Blue Icon */
+
+.form-icon.blue {
+    background: #edf3ff;
+    color: #2456c5;
+}
+
+
+/* =====================================================
+   15. FORM
+   ===================================================== */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-top: 5px;
+}
+
+
+/* Input + Select */
+
+input,
+select {
+    border: 1px solid #d9dee8;
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* Focus */
+
+input:focus,
+select:focus {
+    border-color: #2456c5;
+}
+
+
+/* =====================================================
+   16. MONEY INPUT
+   ===================================================== */
+
+.money {
+    display: flex;
+}
+
+.money span {
+    background: #f0f3f8;
+
+    padding: 13px;
+
+    border: 1px solid #d9dee8;
+
+    border-right: 0;
+
+    border-radius: 9px 0 0 9px;
+}
+
+.money input {
+    flex: 1;
+
+    border-radius: 0 9px 9px 0;
+}
+
+
+/* =====================================================
+   17. BUTTON
+   ===================================================== */
+
+.btn {
+    background: #2456c5;
+
+    color: white;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    padding: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   18. FILTERS
+   ===================================================== */
+
+.filters {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.filters input {
+    flex: 1;
+}
+
+
+/* =====================================================
+   19. AUTH / LOGIN / REGISTER
+   ===================================================== */
+
+.auth {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* Left Side */
+
+.auth-left {
+    background: linear-gradient(
+        145deg,
+        #101c3b,
+        #1f3f8d
+    );
+
+    color: #fff;
+
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* Auth Brand */
+
+.auth-brand {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* Auth Heading */
+
+.auth-left h1 {
+    font-size: 48px;
+    line-height: 1.08;
+}
+
+.auth-left h1 span {
+    color: #9db9ff;
+}
+
+.auth-left p {
+    color: #bac8e7;
+
+    max-width: 450px;
+
+    line-height: 1.7;
+}
+
+
+/* Right Side */
+
+.auth-right {
+    display: grid;
+
+    place-items: center;
+
+    padding: 30px;
+
+    background: #f7f9fc;
+}
+
+
+/* Auth Card */
+
+.auth-card {
+    width: min(430px, 100%);
+}
+
+.auth-card h2 {
+    font-size: 30px;
+
+    margin: 10px 0 6px;
+}
+
+
+/* Auth Icon */
+
+.iconbox {
+    width: 48px;
+    height: 48px;
+
+    background: #e9efff;
+
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+}
+
+.auth-card form {
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   20. AUTH EXTRA ELEMENTS
+   ===================================================== */
+
+.row-between {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.check {
+    font-weight: 400;
+}
+
+.check input {
+    width: auto;
+}
+
+.center {
+    text-align: center;
+
+    margin-top: 22px;
+}
+
+
+/* Mobile Logo */
+
+.mobile-logo {
+    display: none;
+}
+
+
+/* =====================================================
+   21. RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    /* Sidebar */
+
+    .sidebar {
+        width: 72px;
+    }
+
+    .sidebar .logo span,
+    .sidebar a span,
+    .menu-label {
+        display: none;
+    }
+
+
+    /* Content */
+
+    .content {
+        margin-left: 72px;
+
+        width: calc(100% - 72px);
+
+        padding: 22px;
+    }
+
+
+    /* Grid */
+
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Balance */
+
+    .balance-hero {
+        align-items: flex-start;
+
+        gap: 20px;
+
+        flex-direction: column;
+    }
+
+
+    /* Login/Register */
+
+    .auth {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-left {
+        display: none;
+    }
+
+
+    /* Mobile Logo */
+
+    .mobile-logo {
+        display: block;
+
+        font-size: 20px;
+
+        font-weight: 800;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* Account Details */
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Filters */
+
+    .filters {
+        flex-wrap: wrap;
+    }
+}

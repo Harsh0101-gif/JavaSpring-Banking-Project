@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- ================= PAGE SETTINGS ================= -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>SecureBank | Register</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+
+<body class="auth">
+
+
+<!-- =================================================
+     LEFT SIDE
+================================================== -->
+<div class="auth-left">
+
+    <!-- Logo -->
+    <div class="auth-brand">
+        ◈ SecureBank
+    </div>
+
+
+    <!-- Introduction -->
+    <div>
+
+        <h1>
+            Open your account<br>
+            <span>in minutes.</span>
+        </h1>
+
+        <p>
+            Simple, secure and modern digital banking.
+        </p>
+
+    </div>
+
+
+    <!-- Copyright -->
+    <small>
+        © 2026 SecureBank
+    </small>
+
+</div>
+
+
+<!-- =================================================
+     RIGHT SIDE
+================================================== -->
+<div class="auth-right">
+
+    <div class="auth-card">
+
+
+        <!-- Mobile Logo -->
+        <div class="mobile-logo">
+            ◈ SecureBank
+        </div>
+
+
+        <!-- Heading -->
+        <h2>
+            Create account
+        </h2>
+
+        <p class="muted">
+            Enter your details to get started
+        </p>
+
+
+        <!-- =================================================
+             REGISTRATION FORM
+        ================================================== -->
+        <form th:action="@{/loginform}"
+             th:object="${sita}" method="get">
+
+
+            <!-- Full Name -->
+            <label>
+                Full Name
+            </label>
+
+            <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Your full name"
+                    required
+            >
+
+
+            <!-- Email -->
+            <label>
+                Email
+            </label>
+
+            <input
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+            >
+
+
+            <!-- Mobile Number -->
+            <label>
+                Mobile Number
+            </label>
+
+            <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="+91 XXXXX XXXXX"
+                    required
+            >
+
+
+            <!-- Password -->
+            <label>
+                Password
+            </label>
+
+            <input
+                    type="password"
+                    name="password"
+                    placeholder="Create password"
+                    required
+            >
+
+
+            <!-- Create Account Button -->
+            <button
+                    type="submit"
+                    class="btn">
+
+                Create Account →
+
+            </button>
+
+        </form>
+
+
+        <!-- Login Link -->
+        <p class="center muted">
+
+            Already registered?
+
+            <a th:href="@{/login}">
+                Sign in
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

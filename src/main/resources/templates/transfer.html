@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- ================= PAGE SETTINGS ================= -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Transfer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+</head>
+
+
+<body>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="layout">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            ◈
+            <span>SecureBank</span>
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <div th:insert="~{fragement/main.html}"></div>
+
+        <!-- ================= SIDEBAR BOTTOM ================= -->
+        <div th:insert="~{fragement/SideBarBottom.html}"></div>
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+    <main class="content">
+
+
+        <!-- ================= TOP BAR ================= -->
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+                    Transfer Money
+                </h2>
+
+                <p class="muted">
+                    Send money securely to another account.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             TRANSFER FORM CARD
+        ================================================== -->
+        <section class="form-card">
+
+
+            <!-- Transfer Icon -->
+            <div class="form-icon blue">
+                ⇄
+            </div>
+
+
+            <!-- Heading -->
+            <h2>
+                New Transfer
+            </h2>
+
+
+            <!-- Available Balance -->
+            <p class="muted">
+                Available balance:
+                <b>₹50,000.00</b>
+            </p>
+
+
+            <!-- ================= TRANSFER FORM ================= -->
+            <form th:action="@{/transferform}"
+                  th:object="${tita}" method="get">
+
+
+                <!-- Beneficiary Account Number -->
+                <label>
+                    Beneficiary Account Number
+                </label>
+
+                <input
+                        type="text"
+                        name="accountNumber"
+                        placeholder="Enter account number"
+                        required
+                >
+
+
+                <!-- IFSC Code -->
+                <label>
+                    IFSC Code
+                </label>
+
+                <input
+                        type="text"
+                        name="ifscCode"
+                        placeholder="Enter IFSC code"
+                        required
+                >
+
+
+                <!-- Amount -->
+                <label>
+                    Amount
+                </label>
+
+                <div class="money">
+
+                    <!-- Currency -->
+                    <span>
+                            ₹
+                        </span>
+
+                    <!-- Amount Input -->
+                    <input
+                            type="number"
+                            name="amount"
+                            min="1"
+                            placeholder="0.00"
+                            required
+                    >
+
+                </div>
+
+
+                <!-- Remarks -->
+                <label>
+                    Remarks
+                </label>
+
+                <input
+                        type="text"
+                        name="remarks"
+                        placeholder="Optional message"
+                >
+
+
+                <!-- Review Transfer Button -->
+                <button
+                        type="submit"
+                        class="btn">
+
+                    Review Transfer →
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script th:src="@{/js/app.js}"></script>
+
+</body>
+
+</html>

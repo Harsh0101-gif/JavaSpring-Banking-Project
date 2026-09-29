@@ -83,9 +83,7 @@
              REGISTRATION FORM
         ================================================== -->
         <form th:action="@{/loginform}"
-             th:object="${sita}" method="get">
-
-
+             th:object="${registerForm}" method="get">
             <!-- Full Name -->
             <label>
                 Full Name
@@ -98,7 +96,7 @@
                     required
             >
 
-
+         <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></span>
             <!-- Email -->
             <label>
                 Email
@@ -110,7 +108,7 @@
                     placeholder="you@example.com"
                     required
             >
-
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
 
             <!-- Mobile Number -->
             <label>
@@ -124,7 +122,8 @@
                     required
             >
 
-
+         <span th:if="${#fields.hasErrors('mobile')}"
+               th:errors="*{mobile}"></span>
             <!-- Password -->
             <label>
                 Password
@@ -136,7 +135,7 @@
                     placeholder="Create password"
                     required
             >
-
+           <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
 
             <!-- Create Account Button -->
             <button

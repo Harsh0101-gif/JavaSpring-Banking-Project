@@ -97,7 +97,7 @@
 
             <!-- ================= DEPOSIT FORM ================= -->
             <form th:action="@{/depositform}"
-                  th:object="${dita}" method="get">
+                  th:object="${depositForm}" method="get">
 
 
                 <!-- Amount -->
@@ -119,8 +119,9 @@
                             min="1"
                             max="50000"
                             placeholder="0.00"
-                            required
                     >
+
+                    <span th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span>
 
                 </div>
 
@@ -144,9 +145,7 @@
                        UPI
                     </option>
 
-                </select>
-
-
+                </select><span th:if="${#fields.hasErrors('depositMethod')}" th:errors="*{depositMethod}"></span>
                 <!-- Submit Button -->
                 <button
                         type="submit"

@@ -97,7 +97,7 @@
 
             <!-- ================= TRANSFER FORM ================= -->
             <form th:action="@{/transferform}"
-                  th:object="${tita}" method="get">
+                  th:object="${transferForm}" method="get">
 
 
                 <!-- Beneficiary Account Number -->
@@ -111,7 +111,8 @@
                         placeholder="Enter account number"
                         required
                 >
-
+                <span th:if="${#fields.hasErrors('accountNumber')}"
+                th:errors="*{accountNumber}"></span>
 
                 <!-- IFSC Code -->
                 <label>
@@ -124,8 +125,7 @@
                         placeholder="Enter IFSC code"
                         required
                 >
-
-
+               <span th:if="${#fields.hasErrors('ifscCode')}" th:errors="*{ifscCode}"></span>
                 <!-- Amount -->
                 <label>
                     Amount
@@ -146,7 +146,8 @@
                             placeholder="0.00"
                             required
                     >
-
+                    <span th:if="${#fields.hasErrors('amount')}"
+                          th:errors="*{amount}"></span>
                 </div>
 
 
@@ -160,7 +161,8 @@
                         name="remarks"
                         placeholder="Optional message"
                 >
-
+                <span th:if="${#fields.hasErrors('remarks')}"
+                      th:errors="*{remarks}"></span>
 
                 <!-- Review Transfer Button -->
                 <button

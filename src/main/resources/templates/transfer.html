@@ -108,6 +108,7 @@
                 <input
                         type="text"
                         name="accountNumber"
+                        th:value="${transferForm.accountNumber}"
                         placeholder="Enter account number"
                         required
                 >
@@ -122,6 +123,7 @@
                 <input
                         type="text"
                         name="ifscCode"
+                        th:value="${transferForm.ifscCode}"
                         placeholder="Enter IFSC code"
                         required
                 >
@@ -143,6 +145,7 @@
                             type="number"
                             name="amount"
                             min="1"
+                            th:value="${transferForm.amount}"
                             placeholder="0.00"
                             required
                     >
@@ -159,6 +162,7 @@
                 <input
                         type="text"
                         name="remarks"
+                        th:text="${transferForm.remarks}"
                         placeholder="Optional message"
                 >
                 <span th:if="${#fields.hasErrors('remarks')}"

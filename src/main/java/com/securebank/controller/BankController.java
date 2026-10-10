@@ -105,6 +105,7 @@ public class BankController {
    m.addAttribute("BindingResult",b);
    return "transfer";
   }
+  m.addAttribute("transferForm",new TransferForm());
   System.out.println(tran);
   return "transfer";
  }
